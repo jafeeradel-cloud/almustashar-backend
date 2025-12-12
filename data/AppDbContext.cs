@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using RealEstateApi.Models;
 
 namespace RealEstateApi.Data
 {
@@ -10,7 +9,6 @@ namespace RealEstateApi.Data
         {
         }
 
-         If your project uses a different entity name, change Property to match your Models.
-       // public DbSet<Property> Properties { get; set; }
+        // لا يوجد DbSet هنا مؤقتًا
     }
 }
