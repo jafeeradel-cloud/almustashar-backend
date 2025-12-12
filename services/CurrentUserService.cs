@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 
 namespace RealEstateApi.Services
@@ -12,8 +11,15 @@ namespace RealEstateApi.Services
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public string? UserId =>
-            _httpContextAccessor.HttpContext?
-                .User?
-                .FindFirstValue(ClaimTypes.NameIdentifier);
+        public string? UserId
+        {
+            get
+            {
+                return _httpContextAccessor.HttpContext?
+                    .User?
+                    .FindFirst("id")?
+                    .Value;
+            }
+        }
     }
+}
