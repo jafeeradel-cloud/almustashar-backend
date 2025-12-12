@@ -17,12 +17,12 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod());
 });
 
- builder.Services.AddDbContext<AppDbContext>(options =>
+// builder.Services.AddDbContext<AppDbContext>(options =>
   options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
- builder.Services.AddScoped<JwtTokenService>();
+// builder.Services.AddScoped<JwtTokenService>();
 
 var jwtSection = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes(jwtSection["Key"]!);
