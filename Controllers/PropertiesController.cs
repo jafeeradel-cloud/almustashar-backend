@@ -1,3 +1,4 @@
+/*
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -280,6 +281,7 @@ namespace RealEstateApi.Controllers
             await _db.SaveChangesAsync();
 
             return NoContent();
+            */
         }
     }
 }
